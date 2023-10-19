@@ -1,6 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+const {user,LogOut} = useContext(AuthContext)
+// console.log(user)
+
+
+const handleLogOut=()=>{
+  LogOut()
+  .then(() => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Oops...',
+      text: 'User logout successfully!',
+     
+    })
+  }).catch((error) => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Oops...',
+      text: 'User created successfully!',
+    footer: <p>{error.message}</p>
+    })
+  });
+}
+
+
   const links = (
     <>
       <ul className="ml-auto mr-8 hidden items-center gap-6 lg:flex">
@@ -20,6 +47,17 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
+
+      {
+        user?<div className="flex gap-5 items-center"><span className="text-pink-600">{user.displayName}</span> <span><img src={user.photoURL} alt="" className="w-8 rounded-full" /></span>
+        <button onClick={handleLogOut}
+        className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+        type="button"
+        data-ripple-light="true"
+      >
+        <span>LogOut</span>
+      </button>
+      </div>: <Link to="/LogIn">
       <button
         className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
         type="button"
@@ -27,6 +65,9 @@ const Navbar = () => {
       >
         <span>Login</span>
       </button>
+      </Link>
+      }
+     
     </>
   );
   return (
@@ -69,7 +110,7 @@ const Navbar = () => {
           {links}
         </div>
       </nav>
-      <div className="mx-auto max-w-screen-md py-12">
+      {/* <div className="mx-auto max-w-screen-md py-12">
         <div className="relative mb-12 flex flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <img
             alt="nature"
@@ -94,7 +135,7 @@ const Navbar = () => {
           new project with a tight deadline that's going to be a chunk of
           change. There are more projects lined up charge extra the next time.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

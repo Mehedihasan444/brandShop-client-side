@@ -5,9 +5,11 @@ import Root from "../Root/Root";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import ErrorElement from "../Component/ErrorElement/ErrorElement";
 import MyCart from "../Pages/MyCart/MyCart";
+import LogIn from "../Pages/LogIn/LogIn";
+import Register from "../Pages/Register/Register";
 
 
-  const Router = createBrowserRouter([
+  const route = createBrowserRouter([
     {
       path: "/",
       element:<Root></Root> ,
@@ -15,7 +17,8 @@ import MyCart from "../Pages/MyCart/MyCart";
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('/brands.json')
         },
         {
             path:"/AddProduct",
@@ -24,10 +27,18 @@ import MyCart from "../Pages/MyCart/MyCart";
         {
             path:"/MyCart",
             element:<MyCart></MyCart>
+        },
+        {
+            path:"/LogIn",
+            element:<LogIn></LogIn>
+        },
+        {
+            path:"/Register",
+            element:<Register></Register>
         }
       ]
     },
   ]);
 
 
-export default Router;
+export default route;

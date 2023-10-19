@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Samsung",
+        "image":"https://i.ibb.co/0ZdPWvL/samsung.png"
+    },
+    {
+        "id":2,
+        "name":"Apple",
+        "image":"https://i.ibb.co/VxxGBmR/apple.png"
+    },
+    {
+        "id":3,
+        "name":"Xiaomi",
+        "image":"https://i.ibb.co/ck0m4Yk/xiaomi.png"
+    },
+    {
+        "id":4,
+        "name":"Oneplus",
+        "image":"https://i.ibb.co/ZBTBJjq/oneplus.png"
+    },
+    {
+        "id":5,
+        "name":"Oppo",
+        "image":"https://i.ibb.co/7Rcs88V/oppo.png"
+    },
+    {
+        "id":6,
+        "name":"Vivo",
+        "image":"https://i.ibb.co/Ydfgggd/vivo.png"
+    }
+]

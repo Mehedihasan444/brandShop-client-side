@@ -8,7 +8,7 @@ const Brands = ({ brands }) => {
       </div>
       <div className="grid grid-cols-3 gap-5 justify-center items-center">
         {brands.map((brand) => (
-          <Link to={`BrandDetailsPage/${brand.id}`} key={brand.id}>
+          <Link to={`BrandDetailsPage/${brand.name}`} key={brand.id}>
             {" "}
             <div className="flex flex-col text-center border p-5 h-[245px] ">
               <div className="flex justify-center items-center flex-grow">

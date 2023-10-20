@@ -1,33 +1,34 @@
 import { useLoaderData } from "react-router-dom";
-
-import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 const MyCart = () => {
   const { user } = useContext(AuthContext);
   const cartItems = useLoaderData();
   const [newUser, setNewUser] = useState("");
-  const [filterUser, setFilterUser] = useState([]);
-  // const [filterData, setFilterData] = useState(filterUser);
-  const [filterData, setFilterData] = useState(cartItems);
+  // const [filterUser, setFilterUser] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  // const [filterData, setFilterData] = useState(cartItems);
 
   // console.log(cartItems);
 
-  //   useEffect(() => {
-  //     const userCartItems = cartItems.filter((cartItem) => cartItem.userEmail ===newUser );
-  //     setFilterUser(userCartItems);
-  //     // console.log(userCartItems);
-  //     setNewUser(user?.email)
-  //     // console.log(newUser);
-  // }, [newUser,user.email, cartItems]);
+  useEffect(() => {
+    setNewUser(user?.email);
+    // console.log(newUser);
+    const userCartItems = cartItems.filter(
+      (cartItem) => cartItem.userEmail === newUser
+    );
+    setFilterData(userCartItems);
+    console.log(userCartItems);
+  }, [newUser, user.email, cartItems]);
 
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     fetch(`http://localhost:5000/addToCart/${_id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const filteredData = filterData.filter((data) => data._id !== _id);
         setFilterData(filteredData);
       });
@@ -43,7 +44,9 @@ const MyCart = () => {
           </div>
           <div className=" space-y-3 p-5">
             <div className="flex justify-between items-center gap-5 flex-1 h-[50px]">
-              <p className="">{cartItem.brand}/{cartItem.category}</p>
+              <p className="">
+                {cartItem.brand}/{cartItem.category}
+              </p>
               <button
                 className="btn text-xl"
                 onClick={() => handleDelete(cartItem._id)}

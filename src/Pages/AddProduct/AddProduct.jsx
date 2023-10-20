@@ -1,10 +1,9 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 
 const AddProduct = () => {
-  const { user } = useContext(AuthContext);
-  const [loggedUser, setLoggedUser] = useState("");
+
   const brandRef = useRef();
   const categoryRef = useRef();
 
@@ -19,7 +18,7 @@ const AddProduct = () => {
     const price = form.price.value;
     const imgURL = form.imgURL.value;
     const description = form.description.value;
-    //  const brand = form.brand.value;
+    
     const productDetails = {
       title,
       price,
@@ -27,7 +26,6 @@ const AddProduct = () => {
       description,
       brand: selectedBrand,
       category: selectedCategory,
-      userEmail: loggedUser,
     };
     // console.log(productDetails);
 
@@ -49,10 +47,7 @@ const AddProduct = () => {
         console.log(data);
       });
   };
-  useEffect(() => {
-    setLoggedUser(user.email);
-  }, [user]);
-  console.log(loggedUser);
+ 
 
   return (
     <div className=" h-screen max-w-7xl mx-auto flex justify-center items-center">

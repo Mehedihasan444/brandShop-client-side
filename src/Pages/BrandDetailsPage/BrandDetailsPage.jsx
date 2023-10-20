@@ -33,48 +33,56 @@ const BrandDetailsPage = () => {
       .then((data) => {
         setProducts(data);
       });
-// console.log(products)
+    // console.log(products)
     const separatedProducts = products.filter(
       (product) => product.brand == params.name
     );
     setfilterProducts(separatedProducts);
+    
   }, [products, filterData, advertisements, params.name]);
 
   //    console.log(filterData.slider_1);
 
-  console.log(filterProducts);
+  // console.log(filterProducts);
+
   return (
     <div>
       {/* slider */}
-      <Swiper
-        navigation={true}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Navigation, Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src={filterData.slider_1} alt="" className="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={filterData.slider_2} alt="" className="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={filterData.slider_3} alt="" className="" />
-        </SwiperSlide>
-      </Swiper>
+      <div className="h-[90vh]">
+        <Swiper
+          navigation={true}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Navigation, Autoplay]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src={filterData.slider_1} alt="" className="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={filterData.slider_2} alt="" className="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={filterData.slider_3} alt="" className="" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
       {/* products */}
 
       <div className="max-w-7xl mx-auto my-10">
         <h1 className="text-4xl font-bold mb-10 border p-3">Our Products</h1>
-        <div className="">
-          {
-           filterProducts.length==0?<NoProductFound></NoProductFound> :filterProducts.map(product =><ProductCard key={product._id} product={product}></ProductCard>)
-          }
+        <div className="grid grid-cols-3 gap-5">
+          {filterProducts.length == 0 ? (
+            <NoProductFound></NoProductFound>
+          ) : (
+            filterProducts.map((product) => (
+              <ProductCard key={product._id} product={product}></ProductCard>
+            ))
+          )}
         </div>
       </div>
     </div>

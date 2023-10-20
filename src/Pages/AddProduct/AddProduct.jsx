@@ -1,7 +1,10 @@
-import  { useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddProduct = () => {
+  const { user } = useContext(AuthContext);
+  const [loggedUser, setLoggedUser] = useState("");
   const brandRef = useRef();
   const categoryRef = useRef();
 
@@ -24,6 +27,7 @@ const AddProduct = () => {
       description,
       brand: selectedBrand,
       category: selectedCategory,
+      userEmail: loggedUser,
     };
     // console.log(productDetails);
 
@@ -37,13 +41,19 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         Swal.fire({
-          icon: 'success',
-          title: 'Oops...',
-          text: 'Add product created successfully!',
+          icon: "success",
+          title: "Oops...",
+          text: "Add product created successfully!",
           // footer: '<a href="">Why do I have this issue?</a>'
-        })
-        console.log(data)});
+        });
+        console.log(data);
+      });
   };
+  useEffect(() => {
+    setLoggedUser(user.email);
+  }, [user]);
+  console.log(loggedUser);
+
   return (
     <div className=" h-screen max-w-7xl mx-auto flex justify-center items-center">
       <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
@@ -110,7 +120,6 @@ const AddProduct = () => {
               <option value="Laptop">Laptop</option>
               <option value="Tablet">Tablet</option>
               <option value="Watch">Watch</option>
-              
             </select>
           </div>
           <div className="form-control">
@@ -119,7 +128,7 @@ const AddProduct = () => {
               <option value="Samsung">Samsung</option>
               <option value="Apple">Apple</option>
               <option value="Xiaomi">Xiaomi</option>
-              <option value="OnePlus">OnePlus</option>
+              <option value="Oneplus">OnePlus</option>
               <option value="Oppo">Oppo</option>
               <option value="Vivo">Vivo</option>
             </select>

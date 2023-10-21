@@ -1,40 +1,34 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
+  const { _id, title, price, description, category, brand, imgURL } = product;
 
-    const {_id,title,price,description,category,brand,imgURL} = product;
-
-const handleUpdate =()=>{
-
-  fetch("http://localhost:5000/addToCart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Oops...',
-          text: ' product is add on the cart successfully!',
-          // footer: '<a href="">Why do I have this issue?</a>'
-        })
-        console.log(data)});
-}
-
+  // const handleUpdate = () => {
+  //   fetch("http://localhost:5000/addToCart", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(product),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       Swal.fire({
+  //         icon: "success",
+  //         title: "Oops...",
+  //         text: " product is add on the cart successfully!",
+  //         // footer: '<a href="">Why do I have this issue?</a>'
+  //       });
+  //       console.log(data);
+  //     });
+  // };
 
   return (
     <div>
-      
-        <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+      <div className="relative flex flex-col text-gray-700 bg-white shadow-md  rounded-xl bg-clip-border">
         <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-60 rounded-xl bg-clip-border">
-          <img
-            src={imgURL}
-            className="object-contain w-full h-full"
-          />
+          <img src={imgURL} className="object-contain w-full h-full" />
         </div>
         <div className="p-6">
           <p className="">{brand}</p>
@@ -52,19 +46,22 @@ const handleUpdate =()=>{
           </p>
         </div>
         <div className="p-6 pt-0 flex gap-5 justify-between">
-        <Link to={`/ProductDetails/${_id}`}>
-        <button className="btn btn-primary">DETAILS</button>
-      </Link>
-          <Link to={`/products/${_id}`}><button onClick={handleUpdate}
-            className="select-none rounded-lg bg-black py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button"
-          >
-           Update 
-          </button></Link>
-      
+          <Link to={`/ProductDetails/${_id}`}>
+            <button className="select-none rounded-lg bg-white  border-2 border-black py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-black transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+              DETAILS
+            </button>
+          </Link>
+          <Link to={`/products/${_id}`}>
+            <button
+              // onClick={handleUpdate}
+              className="select-none rounded-lg bg-black py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+            >
+              Update
+            </button>
+          </Link>
         </div>
       </div>
-      
     </div>
   );
 };

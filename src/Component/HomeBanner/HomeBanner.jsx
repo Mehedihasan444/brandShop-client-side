@@ -9,20 +9,20 @@ import "swiper/css/navigation";
 import "./styles.css";
 
 // import required modules
-import {Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 const HomeBanner = () => {
   return (
     <div>
-      <Swiper 
-      navigation={true} 
-      loop={true}
-      autoplay={{
+      <Swiper
+        navigation={true}
+        loop={true}
+        autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }} 
-        modules={[Navigation,Autoplay]} 
-         className="mySwiper"
-         >
+        }}
+        modules={[Navigation, Autoplay]}
+        className="mySwiper"
+      >
         <SwiperSlide>
           {" "}
           <div
@@ -35,18 +35,21 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">Iphone 14 pro </h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  The iPhone 14 Pro Max features a powerful A16 Bionic chip, a
+                  stunning ProMotion XDR display, enhanced camera capabilities,
+                  5G connectivity, and all-day battery life for an exceptional
+                  premium smartphone experience.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide> <div
+        <SwiperSlide>
+          {" "}
+          <div
             className="hero min-h-screen"
             style={{
               backgroundImage:
@@ -56,17 +59,21 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">Vivo v29 pro</h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  The Vivo V29 Pro features a high-resolution camera, fast
+                  performance, an immersive display, and a sleek design. It
+                  offers cutting-edge technology and stylish aesthetics for an
+                  exceptional mobile experience.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
-          </div></SwiperSlide>
-        <SwiperSlide> <div
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <div
             className="hero min-h-screen"
             style={{
               backgroundImage:
@@ -76,17 +83,20 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">Oppo Find N2 Flip</h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  The Oppo Find N2 Flip is a cutting-edge smartphone with a
+                  foldable display, powerful performance, high-quality cameras,
+                  and a sleek design, offering a premium mobile experience.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
-          </div></SwiperSlide>
-        <SwiperSlide> <div
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <div
             className="hero min-h-screen"
             style={{
               backgroundImage:
@@ -96,17 +106,21 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">OnePlus 11</h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  The OnePlus 11 features a stunning display, powerful
+                  Snapdragon chipset, exceptional camera system, 5G
+                  connectivity, fast charging, OxygenOS, and premium design,
+                  making it a flagship smartphone with top-notch performance.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
-          </div></SwiperSlide>
-        <SwiperSlide> <div
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <div
             className="hero min-h-screen"
             style={{
               backgroundImage:
@@ -116,17 +130,21 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">Xiaomi 13 Ultra</h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                  The Xiaomi 13 Ultra features a stunning OLED display, powerful
+                  Snapdragon processor, and a high-resolution camera system, all
+                  packed in an ultra-slim, lightweight design for premium mobile
+                  experience.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
-          </div></SwiperSlide>
-        <SwiperSlide> <div
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <div
             className="hero min-h-screen"
             style={{
               backgroundImage:
@@ -136,17 +154,15 @@ const HomeBanner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <h1 className="mb-5 text-5xl font-bold">Samsung Galaxy S23</h1>
                 <p className="mb-5">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
+                The Samsung Galaxy S23 features a stunning AMOLED display, powerful processor, advanced camera system, 5G connectivity, long-lasting battery, and innovative software, delivering a top-tier smartphone experience.
                 </p>
                 <button className="btn btn-primary">Buy Now</button>
               </div>
             </div>
-          </div></SwiperSlide>
-       
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   );

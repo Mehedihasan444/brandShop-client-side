@@ -6,7 +6,7 @@ const Brands = ({ brands }) => {
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold">Our Brands</h1>
       </div>
-      <div className="grid grid-cols-3 gap-5 justify-center items-center">
+      <div className="grid md:grid-cols-3 gap-5 justify-center items-center">
         {brands.map((brand) => (
           <Link to={`BrandDetailsPage/${brand.name}`} key={brand.id}>
             {" "}

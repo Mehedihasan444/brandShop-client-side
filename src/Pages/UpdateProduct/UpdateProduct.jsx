@@ -38,7 +38,7 @@ const UpdateProduct = () => {
         Swal.fire({
           icon: "success",
           title: "Oops...",
-          text: "Add product created successfully!",
+          text: "Update product details  successfully!",
           // footer: '<a href="">Why do I have this issue?</a>'
         });
         console.log(data);
@@ -53,7 +53,7 @@ const UpdateProduct = () => {
     <div className=" h-screen max-w-7xl mx-auto flex justify-center items-center">
       <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
         <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-          Add Product details
+          Update Product details
         </h4>
 
         <form

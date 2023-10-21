@@ -35,7 +35,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className=" max-w-7xl mx-auto grid grid-cols-2 gap-5 my-10">
+    <div className=" max-w-7xl mx-auto grid md:grid-cols-2 gap-5 my-10">
       {/* <h1 className="">from cart</h1> */}
       {filterData.map((cartItem) => (
         <div className="h-[250px] rounded-md border flex" key={cartItem}>

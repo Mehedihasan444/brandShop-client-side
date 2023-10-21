@@ -29,7 +29,7 @@ const AddProduct = () => {
     };
     // console.log(productDetails);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://brand-shop-server-side-nu.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

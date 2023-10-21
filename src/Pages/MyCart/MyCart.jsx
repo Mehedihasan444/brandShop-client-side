@@ -25,7 +25,7 @@ const MyCart = () => {
 
   const handleDelete = (_id) => {
     // console.log(_id);
-    fetch(`http://localhost:5000/addToCart/${_id}`, { method: "DELETE" })
+    fetch(`https://brand-shop-server-side-nu.vercel.app/addToCart/${_id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

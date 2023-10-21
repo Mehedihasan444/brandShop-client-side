@@ -39,21 +39,21 @@ const MenuBar = () => {
       <ul className="ml-auto  mr-8 hidden items-center gap-6 lg:flex">
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 border-b-2 px-5 py-2 border-red-600" : ""
   }>
             Home
           </NavLink>
         </li>
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/MyCart" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 border-b-2 px-5 py-2 border-red-600" : ""
   }>
             My cart
           </NavLink>
         </li>
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/AddProduct" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 border-b-2 px-5 py-2 border-red-600" : ""
   }>
             Add Product
           </NavLink>
@@ -122,21 +122,21 @@ const MenuBar = () => {
       <ul className="ml-auto  mr-8  items-center ">
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 " : ""
   }>
             Home
           </NavLink>
         </li>
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/MyCart" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 " : ""
   }>
             My cart
           </NavLink>
         </li>
         <li className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
           <NavLink to="/AddProduct" className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "text-red-600" : ""
+    isPending ? "pending" : isActive ? "text-red-600 " : ""
   }>
             Add Product
           </NavLink>
@@ -152,7 +152,7 @@ const MenuBar = () => {
       </button>
       </div>: <Link to="/LogIn">
       <button
-        className="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+        className="middle none center  rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
         type="button"
         data-ripple-light="true"
       >

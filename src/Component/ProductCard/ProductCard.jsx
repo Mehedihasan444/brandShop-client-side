@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const { _id, title, price, description, category, brand, imgURL } = product;
 
   // const handleUpdate = () => {
-  //   fetch("http://localhost:5000/addToCart", {
+  //   fetch("https://brand-shop-server-side-nu.vercel.app/addToCart", {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div>
-      <div className="relative flex flex-col text-gray-700 bg-white shadow-md  rounded-xl bg-clip-border">
+      <div className="relative flex flex-col text-gray-700 bg-white border  rounded-xl bg-clip-border">
         <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-60 rounded-xl bg-clip-border">
           <img src={imgURL} className="object-contain w-full h-full" />
         </div>

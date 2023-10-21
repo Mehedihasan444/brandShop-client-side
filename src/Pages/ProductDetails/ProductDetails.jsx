@@ -30,7 +30,7 @@ const ProductDetails = () => {
     };
     // console.log(newData);
 
-    fetch("http://localhost:5000/addToCart", {
+    fetch("https://brand-shop-server-side-nu.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const ProductDetails = () => {
 export default ProductDetails;
 
 // useEffect(() => {
-//   fetch("http://localhost:5000/products")
+//   fetch("https://brand-shop-server-side-nu.vercel.app/products")
 //     .then((res) => res.json())
 //     .then((data) => {
 //       setProducts(data)

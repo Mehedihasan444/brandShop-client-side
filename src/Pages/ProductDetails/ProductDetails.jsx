@@ -30,7 +30,7 @@ const ProductDetails = () => {
     };
     // console.log(newData);
 
-    fetch("https://brand-shop-server-side-nu.vercel.app/addToCart", {
+    fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const ProductDetails = () => {
 export default ProductDetails;
 
 // useEffect(() => {
-//   fetch("https://brand-shop-server-side-nu.vercel.app/products")
+//   fetch("https://brand-shop-server-side-mehedihasan444.vercel.app//products")
 //     .then((res) => res.json())
 //     .then((data) => {
 //       setProducts(data)

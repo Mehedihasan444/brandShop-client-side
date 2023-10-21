@@ -1,11 +1,12 @@
+import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ProductCard = ({ product }) => {
-  const { _id, title, price, description, category, brand, imgURL } = product;
+  const { _id, title, price,rating, description, category, brand, imgURL } = product;
 
   // const handleUpdate = () => {
-  //   fetch("https://brand-shop-server-side-nu.vercel.app/addToCart", {
+  //   fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/addToCart", {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",
@@ -38,6 +39,10 @@ const ProductCard = ({ product }) => {
             </p>
             <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
               Price : ${price}.00
+            </p>
+            <p className="flex items-center font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+              <span className="pr-4"> Rating : {rating}</span>
+              <AiFillStar></AiFillStar>
             </p>
           </div>
           <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">

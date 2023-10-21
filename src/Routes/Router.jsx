@@ -25,12 +25,12 @@ const route = createBrowserRouter([
       {
         path: "/BrandDetailsPage/:name",
         element: <BrandDetailsPage></BrandDetailsPage>,
-        loader: () => fetch("https://brand-shop-server-side-nu.vercel.app/advertisements"),
+        loader: () => fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/advertisements"),
       },
       {
         path: "/ProductDetails/:_id",
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute> ,
-        loader: () => fetch("https://brand-shop-server-side-nu.vercel.app/products"),
+        loader: () => fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/products"),
       },
       {
         path: "/AddProduct",
@@ -39,12 +39,12 @@ const route = createBrowserRouter([
       {
         path: "/products/:id",
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({params}) => fetch(`https://brand-shop-server-side-nu.vercel.app/products/${params.id}`),
+        loader: ({params}) => fetch(`https://brand-shop-server-side-mehedihasan444.vercel.app/products/${params.id}`),
       },
       {
         path: "/MyCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch("https://brand-shop-server-side-nu.vercel.app/addToCart"),
+        loader: () => fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/addToCart"),
       },
       {
         path: "/LogIn",

@@ -13,6 +13,9 @@ import "./styles.css";
 import { Autoplay, Navigation } from "swiper/modules";
 import ProductCard from "../../Component/ProductCard/ProductCard";
 import NoProductFound from "../../Component/NoProductFound/NoProductFound";
+
+
+
 const BrandDetailsPage = () => {
   const advertisements = useLoaderData();
   const params = useParams();
@@ -28,7 +31,7 @@ const BrandDetailsPage = () => {
     setFilterData(filteredData);
     // console.log(filterData);
 
-    fetch("https://brand-shop-server-side-nu.vercel.app/products")
+    fetch("https://brand-shop-server-side-mehedihasan444.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
